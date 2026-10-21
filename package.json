@@ -1,0 +1,31 @@
+{
+  "name": "campaign-brief-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turns a marketing campaign brief into team tasks and a Slack summary, checks its own plan, and waits for human approval before a dry-run send.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node src/cli.ts",
+    "ui": "tsc -p ui && node src/server.ts",
+    "build:ui": "tsc -p ui",
+    "eval": "node src/eval.ts",
+    "typecheck": "tsc --noEmit && tsc -p ui --noEmit",
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts",
+    "coverage": "node --test --experimental-test-coverage test/*.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "preact": "^11.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_note": "Synthetic agency setup for the demo. Edit freely. This is not a real org chart.",
+  "teams": [
+    {
+      "team": "Media",
+      "remit": "Paid user acquisition on Meta, TikTok, Apple Search Ads and Google App Campaigns: campaign builds, bidding, budget pacing, creative testing.",
+      "lead_role": "UA Lead",
+      "asana_project": "Media: Client Launches",
+      "asana_project_gid": "DRYRUN-PRJ-MEDIA",
+      "slack_channel": "#team-media",
+      "capacity_note": "Two UA managers free from 2 November. Black Friday week is busy across all clients."
+    },
+    {
+      "team": "PR",
+      "remit": "Press releases, media lists, embargoed briefings, spokesperson prep, coverage tracking.",
+      "lead_role": "PR Director",
+      "asana_project": "PR: Client Launches",
+      "asana_project_gid": "DRYRUN-PRJ-PR",
+      "slack_channel": "#team-pr",
+      "capacity_note": "Normal capacity."
+    },
+    {
+      "team": "Creative",
+      "remit": "Ad creative (static and video), app store screenshots and preview videos, landing page design, localisation of assets into other languages.",
+      "lead_role": "Creative Director",
+      "asana_project": "Creative: Client Launches",
+      "asana_project_gid": "DRYRUN-PRJ-CREATIVE",
+      "slack_channel": "#team-creative",
+      "capacity_note": "At about 80% until 6 November. Each video edit round needs 3 working days."
+    },
+    {
+      "team": "Organic",
+      "remit": "ASO (keywords, metadata, store listings), SEO content, organic social, creator partnerships, ratings and reviews.",
+      "lead_role": "Head of Organic",
+      "asana_project": "Organic: Client Launches",
+      "asana_project_gid": "DRYRUN-PRJ-ORGANIC",
+      "slack_channel": "#team-organic",
+      "capacity_note": "Creator outreach needs a signed budget before any contract goes out."
+    },
+    {
+      "team": "Data",
+      "remit": "Measurement plans, MMP and SKAN setup, event QA, dashboards, weekly and campaign reporting.",
+      "lead_role": "Analytics Lead",
+      "asana_project": "Data: Client Launches",
+      "asana_project_gid": "DRYRUN-PRJ-DATA",
+      "slack_channel": "#team-data",
+      "capacity_note": "Normal capacity."
+    }
+  ],
+  "launch_channel_rule": "Every launch gets an internal Slack channel named #launch-<client>, lowercase.",
+  "agency_closed_days": [
+    { "date": "2026-11-26", "name": "US Thanksgiving" },
+    { "date": "2026-11-27", "name": "Thanksgiving Friday" },
+    { "date": "2026-12-25", "name": "Christmas Day" },
+    { "date": "2026-12-28", "name": "Boxing Day (substitute)" },
+    { "date": "2027-01-01", "name": "New Year's Day" }
+  ]
+}

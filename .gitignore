@@ -1,0 +1,11 @@
+node_modules/
+runs/
+outbox/
+.DS_Store
+ui/dist/
+coverage/
+.env
+.env.local
+.agent-cwd/
+eval/results/
+.claude/

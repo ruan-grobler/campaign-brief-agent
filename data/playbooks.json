@@ -1,0 +1,256 @@
+{
+  "_note": "Synthetic house playbooks for the demo. They hold the agency's standard steps, lead times and definition of done.",
+  "playbooks": {
+    "measurement_setup": {
+      "owner_team": "Data",
+      "summary": "Tracking plan, MMP events, SKAN conversion values and install QA before any paid spend.",
+      "lead_time": "Live and QA'd at least 5 working days before paid campaigns go live.",
+      "steps": [
+        "Agree the event taxonomy with the client product team",
+        "Configure new events in the MMP",
+        "Design and deploy the SKAN conversion value schema",
+        "Run test installs on iOS and Android and confirm attribution"
+      ],
+      "acceptance_criteria": [
+        "Event taxonomy signed off by the client",
+        "Test installs attributed correctly on iOS and Android",
+        "SKAN schema live in the MMP and documented"
+      ],
+      "needs": []
+    },
+    "paid_social_ua": {
+      "owner_team": "Media",
+      "summary": "Meta and TikTok app install campaigns.",
+      "lead_time": "Campaigns built in draft 3 working days before go-live. Final creative needed 5 working days before go-live.",
+      "steps": [
+        "Media plan with budget split by market and platform",
+        "Audience and bidding setup",
+        "Build campaigns in draft with naming convention",
+        "Go live and pace budget daily for the first two weeks"
+      ],
+      "acceptance_criteria": [
+        "Media plan and budget split approved by the client",
+        "Campaigns built in draft with the agreed naming convention",
+        "Tracking links QA'd against the MMP before go-live"
+      ],
+      "needs": ["ad_creative_production", "measurement_setup"]
+    },
+    "apple_search_ads": {
+      "owner_team": "Media",
+      "summary": "Apple Search Ads campaigns: brand, category, competitor and discovery.",
+      "lead_time": "Campaigns built 3 working days before go-live. Needs the final store listing and keywords.",
+      "steps": [
+        "Keyword research shared with Organic",
+        "Campaign structure and CPT bids",
+        "Build and QA in draft",
+        "Go live with the iOS launch"
+      ],
+      "acceptance_criteria": [
+        "Four campaign types built: brand, category, competitor, discovery",
+        "Keyword list aligned with the ASO keyword set",
+        "CPT bids set against the CPI target"
+      ],
+      "needs": ["aso_refresh", "measurement_setup"]
+    },
+    "ad_creative_production": {
+      "owner_team": "Creative",
+      "summary": "Static and video ad creative for paid channels.",
+      "lead_time": "Concepts at least 3 weeks before go-live. Finals 5 working days before go-live, after client legal review.",
+      "steps": [
+        "Concepts presented to the client",
+        "Production of the approved concepts in every platform format",
+        "Client legal review",
+        "Final delivery to Media"
+      ],
+      "acceptance_criteria": [
+        "3 concepts, each in the formats every platform needs",
+        "Passed client legal review",
+        "Files meet each platform's specs"
+      ],
+      "needs": []
+    },
+    "localisation": {
+      "owner_team": "Creative",
+      "summary": "Transcreate finished assets for another language or market, not just translate them.",
+      "lead_time": "4 working days after the source-language finals, plus legal review of the localised version.",
+      "steps": [
+        "Transcreation brief",
+        "Native-speaker copy and review",
+        "Re-export assets in every format",
+        "Client legal review of the localised version"
+      ],
+      "acceptance_criteria": [
+        "Native-speaker review done",
+        "Localised version approved by client legal",
+        "Delivered in the same formats as the source assets"
+      ],
+      "needs": ["ad_creative_production"]
+    },
+    "store_creatives": {
+      "owner_team": "Creative",
+      "summary": "App store screenshots and the app preview video.",
+      "lead_time": "Final assets 7 working days before store submission.",
+      "steps": [
+        "Screenshot storyboard aligned with the ASO keyword themes",
+        "Design screenshots per device size",
+        "Produce the preview video",
+        "Client and legal approval"
+      ],
+      "acceptance_criteria": [
+        "Screenshots for every required device size",
+        "Preview video within the store's length limits",
+        "Approved by client legal"
+      ],
+      "needs": []
+    },
+    "aso_refresh": {
+      "owner_team": "Organic",
+      "summary": "Keywords, title, subtitle and store listing per market.",
+      "lead_time": "Store submission at least 3 working days before launch so app review cannot block it.",
+      "steps": [
+        "Keyword research per market",
+        "Title, subtitle and keyword field per market",
+        "Upload store creatives",
+        "Submit for store review"
+      ],
+      "acceptance_criteria": [
+        "Keyword set agreed with the client",
+        "Listing live or approved in every market in scope",
+        "Store creatives uploaded"
+      ],
+      "needs": ["store_creatives"]
+    },
+    "press_release": {
+      "owner_team": "PR",
+      "summary": "Launch press release.",
+      "lead_time": "Final release approved by client legal 5 working days before distribution.",
+      "steps": [
+        "Messaging and draft",
+        "Client review",
+        "Client legal review",
+        "Distribution on launch day"
+      ],
+      "acceptance_criteria": [
+        "Approved by the client and client legal",
+        "Spokesperson quote approved",
+        "Distribution list and timing confirmed"
+      ],
+      "needs": []
+    },
+    "media_briefings": {
+      "owner_team": "PR",
+      "summary": "Embargoed briefings with target media so coverage lands on launch day.",
+      "lead_time": "Briefings 5 to 10 working days before launch. Embargo lifts on launch day.",
+      "steps": [
+        "Target media list",
+        "Pitch under embargo",
+        "Spokesperson prep",
+        "Briefings and embargo management"
+      ],
+      "acceptance_criteria": [
+        "Target list approved by the client",
+        "Briefings booked before the embargo window opens",
+        "Spokesperson briefing pack delivered"
+      ],
+      "needs": ["press_release"]
+    },
+    "creator_partnerships": {
+      "owner_team": "Organic",
+      "summary": "Creator shortlist, contracts, briefs, content approval and disclosure.",
+      "lead_time": "Contracts signed 15 working days before content goes live.",
+      "steps": [
+        "Shortlist creators",
+        "Budget sign-off",
+        "Contracts and briefs",
+        "Content review and legal approval",
+        "Publish with disclosure"
+      ],
+      "acceptance_criteria": [
+        "Signed budget before outreach starts",
+        "Every post carries #ad or the platform's paid-partnership label",
+        "Content approved by client legal before it goes live"
+      ],
+      "needs": []
+    },
+    "landing_page": {
+      "owner_team": "Creative",
+      "summary": "Launch landing page: copy, design and build, with SEO input from Organic.",
+      "lead_time": "Live 2 working days before launch. Copy needs legal review.",
+      "steps": [
+        "Wireframe and copy",
+        "Design",
+        "Build and QA on mobile",
+        "Legal review of claims"
+      ],
+      "acceptance_criteria": [
+        "Store badges deep-link to the right store per device",
+        "Page passes mobile QA",
+        "Claims approved by client legal"
+      ],
+      "needs": []
+    },
+    "seo_content": {
+      "owner_team": "Organic",
+      "summary": "SEO articles that support the launch.",
+      "lead_time": "Briefs 3 weeks before publishing. Drafts need legal review.",
+      "steps": [
+        "Keyword briefs",
+        "Drafts",
+        "Client and legal review",
+        "Publish and internally link"
+      ],
+      "acceptance_criteria": [
+        "Each article targets an agreed keyword",
+        "Approved by client legal",
+        "Linked from the landing page"
+      ],
+      "needs": []
+    },
+    "organic_social": {
+      "owner_team": "Organic",
+      "summary": "Launch content calendar and community management for the launch window.",
+      "lead_time": "Calendar approved 5 working days before launch.",
+      "steps": [
+        "Content calendar",
+        "Community management guidelines",
+        "Launch-week posting and replies"
+      ],
+      "acceptance_criteria": [
+        "Calendar approved by the client",
+        "Reply guidelines agreed for launch week"
+      ],
+      "needs": []
+    },
+    "ratings_reviews": {
+      "owner_team": "Organic",
+      "summary": "Protect the app store rating during launch: review monitoring, replies, in-app rating prompt timing.",
+      "lead_time": "Monitoring live on launch day.",
+      "steps": [
+        "Review monitoring and alerting",
+        "Reply templates approved",
+        "In-app rating prompt timing agreed with the client"
+      ],
+      "acceptance_criteria": [
+        "Rating tracked daily from launch",
+        "Replies to negative reviews within one working day"
+      ],
+      "needs": []
+    },
+    "launch_reporting": {
+      "owner_team": "Data",
+      "summary": "Live dashboard, weekly reports and the campaign wrap report.",
+      "lead_time": "Dashboard live on launch day.",
+      "steps": [
+        "Dashboard build",
+        "Weekly report template",
+        "Wrap report against KPIs"
+      ],
+      "acceptance_criteria": [
+        "Dashboard live on launch day with installs, CPI and D7 retention by market",
+        "Weekly report every Monday",
+        "Wrap report measures every KPI in the brief"
+      ],
+      "needs": ["measurement_setup"]
+    }
+  }
+}
