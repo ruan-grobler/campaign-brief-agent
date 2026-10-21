@@ -1,6 +1,6 @@
 {
   "name": "campaign-brief-agent",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Turns a marketing campaign brief into team tasks and a Slack summary, checks its own plan, and waits for human approval before a dry-run send.",
   "license": "MIT",

@@ -1,14 +1,31 @@
 # Campaign Brief Agent
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+A team of Claude agents turns a marketing campaign brief into a checked, cross-team launch plan, then waits for a person before anything is sent.
+
+[![CI](https://github.com/ruan-grobler/campaign-brief-agent/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ruan-grobler/campaign-brief-agent/actions/workflows/ci.yml)
 ![Node 22.18+](https://img.shields.io/badge/node-22.18%2B-339933?logo=node.js&logoColor=white)
 ![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
+![MCP tool servers](https://img.shields.io/badge/MCP-tool%20servers-6E56CF)
 ![Tests: 38 passing](https://img.shields.io/badge/tests-38%20passing-brightgreen)
-<!-- CI badge. Switch it on once the repo is published:
-[![CI](https://github.com/ruan-grobler/campaign-brief-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/ruan-grobler/campaign-brief-agent/actions/workflows/ci.yml)
--->
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A team of Claude agents turns a marketing campaign brief into a checked, cross-team launch plan, then waits for a person before anything is sent.
+**The result.** On five synthetic briefs, an adversarial checker raised 36 blocking findings against the first drafts. After one revision, 1 was left, and it goes to the approver as an open risk. The final plans pass 28 of 28 rubric checks, and a prompt injection planted in one brief was flagged and not acted on. Recorded with `claude-opus-5-5` on 19 October 2026, and replayed offline by `npm run demo`.
+
+![Terminal output of npm run demo: 5 of 5 synthetic briefs reproduced event by event, a results table per brief with rubric, blocking findings before and after revision, coverage, tasks and cost, then the totals: rubric pass rate 100 percent, 28 of 28 checks, blocking findings 36 at the first check and 1 after one revision, prompt injection flagged and not acted on.](docs/images/demo-run.svg)
+
+<sub>From [`docs/demo-output.txt`](docs/demo-output.txt), the saved output of `npm run demo`.</sub>
+
+## Quickstart
+
+No API key, no account and no network after the install:
+
+```bash
+npm install
+npm test
+npm run demo
+```
+
+Needs Node 22.18 or newer (tested on Node 24). TypeScript runs directly in Node, so there is no build step.
 
 All data is synthetic: the briefs, the client names, the team directory and the playbooks.
 
@@ -92,17 +109,7 @@ sequenceDiagram
 | Replay | Feeds a recorded run's tool calls through the real tools and returns the recorded model answers, then compares the new run with the recording event by event. Used by the demo and the tests. | `src/runtime/replay.ts`, `src/replay-check.ts` |
 | Run log | One event stream per run: every step, tool call, model-call count, duration and decision, in `runs/<run-id>/events.jsonl`. The control room, the terminal and the replay all read it. | `src/events.ts` |
 
-## Quickstart
-
-No API key, no account and no network after the install:
-
-```bash
-npm install
-npm test
-npm run demo
-```
-
-Needs Node 22.18 or newer (tested on Node 24). TypeScript runs directly in Node, so there is no build step.
+## The demo
 
 `npm run demo` replays the five recorded eval runs through the real pipeline, each on its pinned run date, and prints this report. The full output is in [`docs/demo-output.txt`](docs/demo-output.txt).
 
